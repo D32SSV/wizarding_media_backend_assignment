@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: wizard_media
+    ports: 
+    - 4004:3000
+    env_file:
+      - .env
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
