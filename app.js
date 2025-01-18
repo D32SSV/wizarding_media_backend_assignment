@@ -1,6 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
+// var cors = require('cors')
+
 import Routes from "./routes/meetingRoutes.mjs";
 dotenv.config();
 
@@ -10,6 +13,7 @@ let isConnected = false;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use("/", Routes);
 
 if (!isConnected) {

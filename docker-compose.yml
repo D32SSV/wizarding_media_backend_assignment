@@ -3,7 +3,7 @@ services:
     build: .
     container_name: wizard_media
     ports: 
-    - 4004:3000
+    - 4000:3000
     env_file:
       - .env
     volumes:
